@@ -6,6 +6,6 @@ import java.util.List;
 
 public class PetSeller {
     List<AnimalInfo> allAnimals;
-    void sellPet(AnimalInfo animalInfo){}
+    void sellPet(AnimalInfo animalInfo){ }
     void printSortedAnimals(List<AnimalInfo> listOfAnimals){}
 }

@@ -10,6 +10,6 @@ public class Main {
         AnimalManager animalManager = new AnimalManager();
         AnimalInfo animalInfo = new AnimalInfo();
         AnimalSize animalSize = new AnimalSize();
-        PetSeller petSeller = new PetSeller();
+        PetSeller petSeller = new PetSeller( );
     }
 }
