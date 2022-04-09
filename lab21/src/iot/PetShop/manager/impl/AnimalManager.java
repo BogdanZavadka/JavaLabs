@@ -5,7 +5,7 @@ import iot.PetShop.models.AnimalInfo;
 
 import java.util.List;
 
-public class PetManager implements InterfaceAnimalManager {
+public class AnimalManager implements InterfaceAnimalManager {
 
     private List<AnimalInfo> allAnimals;
 
