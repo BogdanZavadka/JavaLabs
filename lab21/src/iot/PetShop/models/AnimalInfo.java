@@ -54,7 +54,7 @@ public class AnimalInfo extends AnimalSize {
         boolean bool5 = this.getLengthInCm() == animalInfo.animalSize.getLengthInCm();
         boolean bool6 = this.getWeightInGrams() == animalInfo.animalSize.getWeightInGrams();
         boolean bool7 = this.getWidthInCm() == animalInfo.animalSize.getWidthInCm();
-        if (bool1 || bool2 || bool3 || bool4 || bool5 || bool6 || bool7){
+        if (bool1 && bool2 && bool3 && bool4 && bool5 && bool6 && bool7){
             return true;
         }else return false;
     }
