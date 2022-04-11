@@ -27,42 +27,52 @@ public class AnimalManager implements InterfaceAnimalManager {
     }
 
     @Override
-    public List<AnimalInfo> searchByType(String type) {
-        List<AnimalInfo> oneTypeAnimals = new LinkedList<AnimalInfo>();
+    public List<String> searchByType(String type) {
+        List<String> oneTypeAnimalsNames = new LinkedList<String>();
         allAnimals.forEach(animal -> {
-            if (animal.getAnimalType() == type)
-                oneTypeAnimals.add(animal);
+            if (Objects.equals(animal.getAnimalType(), type))
+                oneTypeAnimalsNames.add(animal.getAnimalName());
         });
-        return oneTypeAnimals;
+        return oneTypeAnimalsNames;
     }
 
     @Override
-    public List<AnimalInfo> sortByPrice(float price, boolean sortByDecreasing) {
-        List<AnimalInfo> sortedByPrice = new LinkedList<AnimalInfo>();
-        sortedByPrice = allAnimals;
-        if (!sortByDecreasing){
-            Collections.sort(sortedByPrice, Comparator.comparing(AnimalInfo::getPriceInUAH));
-        } else Collections.reverse(sortedByPrice);
-        return sortedByPrice;
+    public List<String> sortByPrice(boolean sortByDecreasing) {
+        List<AnimalInfo> sortedByPriceClasses = allAnimals;
+        List<String> sortedByPriceNames = new LinkedList<String>();
+        Collections.sort(sortedByPriceClasses, Comparator.comparing(AnimalInfo::getPriceInUAH));
+        sortedByPriceClasses.forEach(animal -> {
+            sortedByPriceNames.add(animal.getAnimalName());
+        });
+        if (sortByDecreasing)
+            Collections.reverse(sortedByPriceNames);
+        return sortedByPriceNames;
     }
 
     @Override
-    public List<AnimalInfo> sortByFeedType(String feedType, boolean sortByDecreasing) {
-        List<AnimalInfo> sortedByFeedType = new LinkedList<AnimalInfo>();
-        sortedByFeedType = allAnimals;
-        if (!sortByDecreasing){
-            Collections.sort(sortedByFeedType, Comparator.comparing(AnimalInfo::getPriceInUAH));
-        } else Collections.reverse(sortedByFeedType);
-        return sortedByFeedType;
+    public List<String> sortByFeedType(boolean sortByDecreasing) {
+        List<AnimalInfo> sortedByFeedTypeClasses = allAnimals;
+        List<String> sortedByFeedTypeNames = new LinkedList<String>();
+        Collections.sort(sortedByFeedTypeClasses, Comparator.comparing(AnimalInfo::getFeedType));
+        sortedByFeedTypeClasses.forEach(animal -> {
+            sortedByFeedTypeNames.add(animal.getAnimalName());
+        });
+        if (sortByDecreasing)
+            Collections.reverse(sortedByFeedTypeNames);
+        return sortedByFeedTypeNames;
     }
 
     @Override
-    public List<AnimalInfo> sortByDailyAmountOfFeed(float dailyAmountOfFeed, boolean sortByDecreasing) {
-        List<AnimalInfo> sortedByByDailyAmountOfFeed = new LinkedList<AnimalInfo>();
-        sortedByByDailyAmountOfFeed = allAnimals;
-        if (!sortByDecreasing){
-            Collections.sort(sortedByByDailyAmountOfFeed, Comparator.comparing(AnimalInfo::getPriceInUAH));
-        } else Collections.reverse(sortedByByDailyAmountOfFeed);
-        return sortedByByDailyAmountOfFeed;
+    public List<String> sortByDailyAmountOfFeed(boolean sortByDecreasing) {
+        List<AnimalInfo> sortedByByDailyAmountOfFeedClasses = allAnimals;
+        List<String> sortedByByDailyAmountOfFeedNames = new LinkedList<String>();
+        Collections.sort(sortedByByDailyAmountOfFeedClasses, Comparator.comparing(AnimalInfo::getDailyAmountOfFeedInGrams));
+
+        sortedByByDailyAmountOfFeedClasses.forEach(animal -> {
+            sortedByByDailyAmountOfFeedNames.add(animal.getAnimalName());
+        });
+        if (sortByDecreasing)
+            Collections.reverse(sortedByByDailyAmountOfFeedNames);
+        return sortedByByDailyAmountOfFeedNames;
     }
 }
