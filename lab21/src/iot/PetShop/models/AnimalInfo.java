@@ -47,8 +47,8 @@ public class AnimalInfo extends AnimalSize {
     }
 
     public boolean equals(AnimalInfo animalInfo){
-        boolean bool1 = this.getAnimalName() == animalInfo.getAnimalName();
-        boolean bool2 = this.getAnimalType() == animalInfo.getAnimalType();
+        boolean bool1 = Objects.equals(this.getAnimalName(), animalInfo.getAnimalName());
+        boolean bool2 = Objects.equals(this.getAnimalType(), animalInfo.getAnimalType());
         boolean bool3 = this.getAnimalAgeInMonth() == animalInfo.getAnimalAgeInMonth();
         boolean bool4 = this.getPriceInUAH() == animalInfo.getPriceInUAH();
         boolean bool5 = this.getLengthInCm() == animalInfo.animalSize.getLengthInCm();
