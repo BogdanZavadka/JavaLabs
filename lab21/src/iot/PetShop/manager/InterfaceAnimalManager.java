@@ -5,11 +5,10 @@ import iot.PetShop.models.AnimalInfo;
 import java.util.List;
 
 public interface InterfaceAnimalManager {
-    void addAnimal(AnimalInfo animalInfo);
-    void sellPet(AnimalInfo animalInfo);
-    void printSortedAnimals(List<AnimalInfo> listOfAnimals);
-    List<AnimalInfo> searchByType(List<AnimalInfo> animals);
-    List<AnimalInfo> sortByPrice(List<AnimalInfo> animals, boolean sortByDecreasing);
-    List<AnimalInfo> sortByFeedType(List<AnimalInfo> animals, boolean sortByDecreasing);
-    List<AnimalInfo> sortByDailyAmountOfFeed(List<AnimalInfo> animals, boolean sortByDecreasing);
+    void addAnimals(List<AnimalInfo> animals);
+    void sellAnimal(AnimalInfo animalInfo);
+    List<String> searchByType(String type);
+    List<String> sortByPrice(boolean sortByDecreasing);
+    List<String> sortByFeedType(boolean sortByDecreasing);
+    List<String> sortByDailyAmountOfFeed(boolean sortByDecreasing);
 }
